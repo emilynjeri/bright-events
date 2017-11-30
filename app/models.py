@@ -74,11 +74,7 @@ class User():
     def place_filter(self,place):
         '''allow to search event by venue ot the event'''
         new_event_list = [event for in self.event_list if event['place'] == place]
-
-    def category_filter(self,category)
-        '''allow user search event by category'''
-        new_event_list = [event for event in self.event_list if event['category'] == category]
-
+        
     def edit_event(self,eventid,event,starttime,finishtime,place)
         for event in self. event_list:
                         event['id'] = eventid
