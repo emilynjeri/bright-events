@@ -19,11 +19,9 @@ class User():
             if email == user['email']:
                 return "email already taken,create another email"
             else:
-                if not match("^[a-zA-Z0-9_]*$", firstname):
-                     return "Name should only contain alpanumeric character" 
-        
-                 if not re.match("^[a-zA-Z0-9_]*$", lastname):
-                     return "Name should only contain alpanumeric character"
+             if not re.match("^[a-zA-Z0-9_]*$", firstname)
+                    return "Name should only contain alpanumeric character" 
+
                 elif len(password) <8:
                     return "password must contain more 8 characters"
                 else:
@@ -32,7 +30,7 @@ class User():
                     user_details['lastname'] = lastname
                     user_details['password'] = password
                     user_details['email'] = email
-                    user_details['id'] = uuid.uuid1()
+                    user_details['id'] = uuid.uuid5()
                     self.user_list.append(user_details)
                     return "You have successfully registered to bright events"
 
@@ -44,9 +42,11 @@ class User():
                                 return "login successful"
                             else:
                                 return "wrong password or email"
+                    else:
+                        return "user does not exist"
 
                 def find _user_by_id(self,user_id):
-                    '''Retrieve user given a user id'''
+                    '''Retrieve user with a given a user id'''
                     for user in self.user_list:
                         if user['id'] == user_id:
                             return user 
